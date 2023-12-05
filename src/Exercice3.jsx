@@ -1,39 +1,38 @@
 import React, { useState } from 'react';
 
-// function allList() {
-//     const list = [];
-//     for (let l = 0; l<100; l++) {
-//         list.push({
-//             text: ''
-//         });
-//     }
-//     return list;
-// }
+function allList() {
+    const initialList = [];
+    initialList.push({
+        text: ''
+    });
+    return initialList;
+}
 
 export default function Exercice3() {
-    const [text, setText] = useState({
-        item: '',
-    });
-
-
+    const [list, setList] = useState(allList);
+    const [text, setText] = useState('');
 
     return (
         <>
             <input
                 type='text'
                 placeholder='Elément à ajouter...'
-                value={text.item}
+                value={text}
                 onChange={event => setText(event.target.value)}
             />
             <button
-                onClick={event => {
-                    setText({
-                        ...text,
-                        item: event.target.value
-                    });
+                onClick={() => {
+                    setText('');
+                    setList([{
+                        text: text
+                    }, ...list]);
                 }}
             >Ajouter</button>
-
+            {list.map(item => (
+                <li>
+                    {item.text}
+                </li>
+            ))}
         </>
     );
 }
