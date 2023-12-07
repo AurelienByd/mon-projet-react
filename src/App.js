@@ -4,14 +4,21 @@ import Exercice1 from './Exercice1.jsx';
 import Exercice2 from './Exercice2.jsx';
 import Exercice3 from './Exercice3.jsx';
 import Api from './ExerciceApiThemoviedb.jsx';
+import Table from './Table.jsx';
 
 export default function App() {
 
   return (
     <>
-      <Api />
+      <Table />
     </>
-  );
+  )
+
+  // return (
+  //   <>
+  //     <Api />
+  //   </>
+  // );
   
   // return (
   //   <>

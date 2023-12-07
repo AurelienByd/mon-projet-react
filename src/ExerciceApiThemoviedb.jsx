@@ -10,7 +10,7 @@ export default function Api() {
                 return response.json();
             })
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setMovies(data.results)
             })
     }
